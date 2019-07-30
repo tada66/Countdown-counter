@@ -15,7 +15,7 @@ namespace counter
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
 		private System.Windows.Forms.Button b_start;
-		private System.Windows.Forms.NumericUpDown n_cas;
+		private System.Windows.Forms.NumericUpDown n_time;
 		private System.Windows.Forms.Timer timer1;
 		private System.Windows.Forms.ProgressBar progressBar1;
 		private System.Windows.Forms.Label l_setfor;
@@ -32,7 +32,7 @@ namespace counter
 		private System.Windows.Forms.Label l_output;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Button b_settings;
-		private System.Windows.Forms.NumericUpDown n_casmin;
+		private System.Windows.Forms.NumericUpDown n_timemin;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Label label7;
 		
@@ -60,7 +60,7 @@ namespace counter
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.b_start = new System.Windows.Forms.Button();
-            this.n_cas = new System.Windows.Forms.NumericUpDown();
+            this.n_time = new System.Windows.Forms.NumericUpDown();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.l_setfor = new System.Windows.Forms.Label();
@@ -77,12 +77,12 @@ namespace counter
             this.label6 = new System.Windows.Forms.Label();
             this.l_output = new System.Windows.Forms.Label();
             this.b_settings = new System.Windows.Forms.Button();
-            this.n_casmin = new System.Windows.Forms.NumericUpDown();
+            this.n_timemin = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.n_cas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.n_time)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Error)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.n_casmin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.n_timemin)).BeginInit();
             this.SuspendLayout();
             // 
             // b_start
@@ -96,17 +96,17 @@ namespace counter
             this.b_start.UseVisualStyleBackColor = true;
             this.b_start.Click += new System.EventHandler(this.B_startClick);
             // 
-            // n_cas
+            // n_time
             // 
-            this.n_cas.Location = new System.Drawing.Point(421, 9);
-            this.n_cas.Maximum = new decimal(new int[] {
+            this.n_time.Location = new System.Drawing.Point(421, 9);
+            this.n_time.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
-            this.n_cas.Name = "n_cas";
-            this.n_cas.Size = new System.Drawing.Size(114, 20);
-            this.n_cas.TabIndex = 1;
+            this.n_time.Name = "n_time";
+            this.n_time.Size = new System.Drawing.Size(114, 20);
+            this.n_time.TabIndex = 1;
             // 
             // timer1
             // 
@@ -252,12 +252,12 @@ namespace counter
             this.b_settings.UseVisualStyleBackColor = true;
             this.b_settings.Click += new System.EventHandler(this.B_settingsClick);
             // 
-            // n_casmin
+            // n_timemin
             // 
-            this.n_casmin.Location = new System.Drawing.Point(195, 9);
-            this.n_casmin.Name = "n_casmin";
-            this.n_casmin.Size = new System.Drawing.Size(136, 20);
-            this.n_casmin.TabIndex = 8;
+            this.n_timemin.Location = new System.Drawing.Point(195, 9);
+            this.n_timemin.Name = "n_timemin";
+            this.n_timemin.Size = new System.Drawing.Size(136, 20);
+            this.n_timemin.TabIndex = 8;
             // 
             // label7
             // 
@@ -287,14 +287,14 @@ namespace counter
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(623, 375);
-            this.Controls.Add(this.n_casmin);
+            this.Controls.Add(this.n_timemin);
             this.Controls.Add(this.b_settings);
             this.Controls.Add(this.t_after);
             this.Controls.Add(this.t_before);
             this.Controls.Add(this.b_start);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.n_cas);
+            this.Controls.Add(this.n_time);
             this.Controls.Add(this.l_output);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -310,9 +310,9 @@ namespace counter
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "CountDown timer 1.8";
-            ((System.ComponentModel.ISupportInitialize)(this.n_cas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.n_time)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Error)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.n_casmin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.n_timemin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

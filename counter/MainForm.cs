@@ -28,7 +28,7 @@ namespace counter
 			InitializeComponent();
 			if(File.Exists("Counter/CountDown.txt") != true)
 			{
-				Form generate = new generating();           //
+				Form generate = new generating();           
 				generate.Show();    
 				
 			}
@@ -49,20 +49,20 @@ namespace counter
 		}
 		void B_startClick(object sender, EventArgs e)
 		{
-			int cas = Decimal.ToInt32(n_cas.Value) + decimal.ToInt32(n_casmin.Value) * 60;
-			if(cas == 0)
+			int time = Decimal.ToInt32(n_time.Value) + decimal.ToInt32(n_timemin.Value) * 60;  //Coonverts minutes into seconds and puts it all into "time"
+			if(time == 0)
 			{
 				MessageBox.Show("The time cannon be 0", "Error", 
-   					MessageBoxButtons.OK, MessageBoxIcon.Error);
-				Error.SetError(n_cas, "This cannot be zero");
+   					MessageBoxButtons.OK, MessageBoxIcon.Error);        //Show an error message when "time" is set to zero
+				Error.SetError(n_time, "This cannot be zero");
 			}
 			else
 			{
 				progressBar1.Value = 0;
-				progressBar1.Maximum = cas * rychlost_progbar;
-				using(StreamWriter sw = new StreamWriter("Counter/CountDown.txt"))
+				progressBar1.Maximum = time * rychlost_progbar;     
+				using(StreamWriter sw = new StreamWriter("Counter/CountDown.txt"))      
 				{
-					sw.Write(cas);
+					sw.Write(time);     //Write the current remaining time into a text file
 				}
 				timer1.Enabled = true;
 				timer2.Enabled = true;
@@ -74,29 +74,29 @@ namespace counter
 			using(StreamReader sr = new StreamReader("Counter/CountDown.txt"))
 			{
 				string aa = sr.ReadLine();
-				int max = progressBar1.Maximum / rychlost_progbar;
+				int max = progressBar1.Maximum / rychlost_progbar;      
 				l_setfor.Text = max + "s";
 			}
 			using(StreamWriter sw = new StreamWriter("Counter/CountDown.txt"))
 			{
 				int setfor = progressBar1.Maximum / rychlost_progbar;
-				TimeSpan span = new TimeSpan(0, 0, 0, setfor, 0); //Converts seconds to the good shit
+				TimeSpan span = new TimeSpan(0, 0, 0, setfor, 0);       //Converts seconds to a into a full clock
 				l_setfor.Text = span.ToString();
 				
 				int remaining = progressBar1.Maximum / rychlost_progbar - progressBar1.Value / rychlost_progbar;
-				TimeSpan spanrem = new TimeSpan(0, 0, 0, remaining, 0); //Converts seconds to the good shit
-				l_remaining.Text = spanrem.ToString();
+				TimeSpan spanrem = new TimeSpan(0, 0, 0, remaining, 0);         //Converts seconds to a into a full clock
+                l_remaining.Text = spanrem.ToString();
 				
 				string text_before = t_before.Text;
 				string text_after = t_after.Text;
-				string output = text_before + "" + spanrem.ToString() + "" + text_after;
+				string output = text_before + "" + spanrem.ToString() + "" + text_after;        
 				l_output.Text = output;
 				sw.Write(output);
 			}
 			if(progressBar1.Value == progressBar1.Maximum)
 			{
-				timer1.Enabled = false;
-				timer2.Enabled = false;
+				timer1.Enabled = false;     //The progress bar has reached the end, stop the timers
+                timer2.Enabled = false;     
 			}
 		}
 		void Timer2Tick(object sender, EventArgs e)
@@ -104,7 +104,6 @@ namespace counter
 			progressBar1.Value += 1;
 			if(progressBar1.Value == progressBar1.Maximum)
 			{
-				timer1.Enabled = false;
 				timer2.Enabled = false;
 			}
 		}
