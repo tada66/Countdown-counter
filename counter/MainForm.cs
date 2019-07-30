@@ -28,8 +28,8 @@ namespace counter
 			InitializeComponent();
 			if(File.Exists("Counter/CountDown.txt") != true)
 			{
-				Form generate = new generating();
-				generate.Show();
+				Form generate = new generating();           //
+				generate.Show();    
 				
 			}
 			if(File.Exists("Counter/settings.xml") == true)
