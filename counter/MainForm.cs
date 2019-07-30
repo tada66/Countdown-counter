@@ -54,7 +54,7 @@ namespace counter
 			{
 				MessageBox.Show("The time cannon be 0", "Error", 
    					MessageBoxButtons.OK, MessageBoxIcon.Error);
-				Error.SetError(n_cas, "Your aer teh stupode");
+				Error.SetError(n_cas, "This cannot be zero");
 			}
 			else
 			{
