@@ -24,14 +24,11 @@ namespace counter
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
-			info.SetError(ch_smooth, "Can improve performance on a slow computer");
 			info.SetError(ch_bgimage, "Can improve performance on a slow computer");
 			info.SetError(ch_contaftercrash, "If the app gets closed, after reopening it will continue from where it stopped");
 			using(StreamReader sr = new StreamReader("Counter/settings.xml"))
 			{
 				string smooth = sr.ReadLine();
-				if(smooth == "True")
-					ch_smooth.Checked = true;
 				string bgimage = sr.ReadLine();
 				if(bgimage == "True")
 					ch_bgimage.Checked = true;
@@ -49,15 +46,10 @@ namespace counter
 		{
 			using(StreamWriter sw = new StreamWriter("Counter/settings.xml"))
 			{
-				sw.WriteLine(ch_smooth.Checked);
 				sw.WriteLine(ch_bgimage.Checked);
-				
+                sw.WriteLine(ch_contaftercrash.Checked);
 			}
 			Application.Restart();
-		}
-		void Ch_smoothCheckedChanged(object sender, EventArgs e)
-		{
-			ErrorNigga.SetError(ch_smooth, "Does NOT yet work");
 		}
 		
 	}

@@ -35,15 +35,15 @@ namespace counter
 			if(File.Exists("Counter/settings.xml") == true)
 			{
 				using(StreamReader sr = new StreamReader("Counter/settings.xml"))
-				{
-					string smooth = sr.ReadLine();
-					if(smooth == "True")
-					{
-						
-					}	
+				{	
 					string bgimage = sr.ReadLine();
 					if(bgimage == "True")
 						this.BackgroundImage = null;
+                    string contaftercrash = sr.ReadLine();
+                    if(contaftercrash == "True")
+                    {
+                                                                                         //TODO: Implement function continuing after crash
+                    }
 				}
 			}
 		}
