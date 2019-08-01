@@ -35,23 +35,23 @@ namespace counter
 			{
 				string folderName = @"";
 				string pathString = System.IO.Path.Combine(folderName, "Counter");
-				System.IO.Directory.CreateDirectory(pathString);
+				System.IO.Directory.CreateDirectory(pathString);                    //Generate the folder "Counter"
 				l_generating.Text = "Generating countdown text file...";
 			}
 			if(progressBar1.Value == 60)
-			{
-				using(StreamWriter sw = new StreamWriter("Counter/countdown.txt"));
-				l_generating.Text = "Generating settings...";
+			{   
+				using(StreamWriter sw = new StreamWriter("Counter/countdown.txt"));     //Generate countdown.txt 
+				l_generating.Text = "Generating settings...";           
 			}
 			if(progressBar1.Value == 110)
 			{
 				using(StreamWriter sw = new StreamWriter("Counter/settings.xml"));
-				l_generating.Text = "Files generated succesfully. You can close this window now.";
+				l_generating.Text = "Files generated succesfully. You can close this window now.";  //Generate settings.xml and shut timer off
 				progressBar1.Value = progressBar1.Value + 10;
 				timer1.Enabled = false;
 			}
 			if(progressBar1.Value != progressBar1.Maximum)
-				progressBar1.Value = progressBar1.Value + 50;
+				progressBar1.Value = progressBar1.Value + 50;       //After generating something increase pbar by 50 in order for other stuff to be generated
 		}
 		void Button1Click(object sender, EventArgs e)
 		{
@@ -59,7 +59,7 @@ namespace counter
 			progressBar1.Visible = true;
 			label1.Visible = false;
 			b_yes.Visible = false;
-			l_generating.Visible = true;
+			l_generating.Visible = true;                //After clicking generate do all kinds of shit
 			l_generating.Text = "Generating folder...";
 			b_no.Visible = false;
 		}

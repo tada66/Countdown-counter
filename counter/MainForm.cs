@@ -28,17 +28,17 @@ namespace counter
 			InitializeComponent();
 			if(File.Exists("Counter/CountDown.txt") != true)
 			{
-				Form generate = new generating();           
+				Form generate = new generating();                               //If files required for app to work are present open generate
 				generate.Show();    
 				
 			}
 			if(File.Exists("Counter/settings.xml") == true)
 			{
 				using(StreamReader sr = new StreamReader("Counter/settings.xml"))
-				{	
+				{	                                                                        //If they do exist continue and apply settings.xml
 					string bgimage = sr.ReadLine();
 					if(bgimage == "True")
-						this.BackgroundImage = null;
+						this.BackgroundImage = null;                        
                     string contaftercrash = sr.ReadLine();
                     if(contaftercrash == "True")
                     {
@@ -70,11 +70,10 @@ namespace counter
 		}
 		void Timer1Tick(object sender, EventArgs e)
 		{
-			//progressBar1.Value += 1;
 			using(StreamReader sr = new StreamReader("Counter/CountDown.txt"))
 			{
 				string aa = sr.ReadLine();
-				int max = progressBar1.Maximum / rychlost_progbar;      
+				int max = progressBar1.Maximum / rychlost_progbar;            //I forgot what this does but it looks like its important so I might as well keep it
 				l_setfor.Text = max + "s";
 			}
 			using(StreamWriter sw = new StreamWriter("Counter/CountDown.txt"))
@@ -101,7 +100,7 @@ namespace counter
 		}
 		void Timer2Tick(object sender, EventArgs e)
 		{
-			progressBar1.Value += 1;
+			progressBar1.Value += 1;                    //A second much faster timer used to make the progress bar smooth
 			if(progressBar1.Value == progressBar1.Maximum)
 			{
 				timer2.Enabled = false;
@@ -110,7 +109,7 @@ namespace counter
 		void B_settingsClick(object sender, EventArgs e)
 		{
 			Form sett = new settings();
-			sett.Show();
+			sett.Show();                //Open settings
 		}
 	}
 }
