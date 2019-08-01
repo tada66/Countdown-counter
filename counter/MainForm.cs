@@ -15,7 +15,7 @@ using System.Windows.Forms;
 namespace counter
 {
 	/// <summary>
-	/// Description of MainForm.
+	/// The main app
 	/// </summary>
 	public partial class MainForm : Form
 	{
@@ -26,6 +26,7 @@ namespace counter
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
+            b_unlock.Visible = false;
 			if(File.Exists("Counter/CountDown.txt") != true)
 			{
 				Form generate = new generating();                               //If files required for app to work are present open generate
@@ -42,7 +43,7 @@ namespace counter
                     string contaftercrash = sr.ReadLine();
                     if(contaftercrash == "True")
                     {
-                                                                                         //TODO: Implement function continuing after crash
+                                                                              //TODO: Implement function continuing after crash
                     }
 				}
 			}
@@ -111,5 +112,19 @@ namespace counter
 			Form sett = new settings();
 			sett.Show();                //Open settings
 		}
-	}
+
+        private void b_lock_Click(object sender, EventArgs e)
+        {
+            b_lock.Visible = false;
+            b_start.Enabled = false;
+            b_unlock.Visible = true;
+        }
+
+        private void b_unlock_Click(object sender, EventArgs e)
+        {
+            b_start.Enabled = true;
+            b_lock.Visible = true;
+            b_unlock.Visible = false;
+        }
+    }
 }

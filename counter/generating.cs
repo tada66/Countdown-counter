@@ -14,7 +14,7 @@ using System.IO;
 namespace counter
 {
 	/// <summary>
-	/// Description of generating.
+	/// Generates everything
 	/// </summary>
 	public partial class generating : Form
 	{

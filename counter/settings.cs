@@ -14,7 +14,7 @@ using System.Windows.Forms;
 namespace counter
 {
 	/// <summary>
-	/// Description of settings.
+	/// Settings
 	/// </summary>
 	public partial class settings : Form
 	{

@@ -80,6 +80,8 @@ namespace counter
             this.n_timemin = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.b_lock = new System.Windows.Forms.Button();
+            this.b_unlock = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.n_time)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Error)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_timemin)).BeginInit();
@@ -118,7 +120,7 @@ namespace counter
             this.progressBar1.Location = new System.Drawing.Point(13, 340);
             this.progressBar1.Maximum = 10000;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(568, 23);
+            this.progressBar1.Size = new System.Drawing.Size(538, 23);
             this.progressBar1.TabIndex = 2;
             // 
             // l_setfor
@@ -281,13 +283,38 @@ namespace counter
             this.label8.TabIndex = 4;
             this.label8.Text = "Seconds";
             // 
+            // b_lock
+            // 
+            this.b_lock.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("b_lock.BackgroundImage")));
+            this.b_lock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b_lock.Cursor = System.Windows.Forms.Cursors.Default;
+            this.b_lock.Location = new System.Drawing.Point(557, 340);
+            this.b_lock.Name = "b_lock";
+            this.b_lock.Size = new System.Drawing.Size(24, 23);
+            this.b_lock.TabIndex = 9;
+            this.b_lock.UseVisualStyleBackColor = true;
+            this.b_lock.Click += new System.EventHandler(this.b_lock_Click);
+            // 
+            // b_unlock
+            // 
+            this.b_unlock.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("b_unlock.BackgroundImage")));
+            this.b_unlock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b_unlock.Cursor = System.Windows.Forms.Cursors.Default;
+            this.b_unlock.Location = new System.Drawing.Point(557, 340);
+            this.b_unlock.Name = "b_unlock";
+            this.b_unlock.Size = new System.Drawing.Size(24, 23);
+            this.b_unlock.TabIndex = 10;
+            this.b_unlock.UseVisualStyleBackColor = true;
+            this.b_unlock.Click += new System.EventHandler(this.b_unlock_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(623, 375);
+            this.Controls.Add(this.b_unlock);
+            this.Controls.Add(this.b_lock);
             this.Controls.Add(this.n_timemin);
             this.Controls.Add(this.b_settings);
             this.Controls.Add(this.t_after);
@@ -318,5 +345,8 @@ namespace counter
             this.PerformLayout();
 
 		}
-	}
+
+        private System.Windows.Forms.Button b_unlock;
+        private System.Windows.Forms.Button b_lock;
+    }
 }
