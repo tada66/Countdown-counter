@@ -35,17 +35,40 @@ namespace counter
 			}
 			if(File.Exists("Counter/settings.xml") == true)
 			{
-				using(StreamReader sr = new StreamReader("Counter/settings.xml"))
-				{	                                                                        //If they do exist continue and apply settings.xml
-					string bgimage = sr.ReadLine();
-					if(bgimage == "True")
-						this.BackgroundImage = null;                        
+                using (StreamReader sr = new StreamReader("Counter/settings.xml"))
+                {                                                                           //If they do exist continue and apply settings.xml
+                    string bgimage = sr.ReadLine();
                     string contaftercrash = sr.ReadLine();
-                    if(contaftercrash == "True")
+                    string bgcolor = sr.ReadLine();
+                    if (bgimage == "True")
                     {
-                                                                              //TODO: Implement function continuing after crash
+                        this.BackgroundImage = null;
+                        if (string.IsNullOrEmpty(bgcolor) != true)  // setting bg color for form 
+                        {
+                            if (bgcolor == "White")
+                                this.BackColor = System.Drawing.Color.White;
+
+                            else if (bgcolor == "Light grey")
+                                this.BackColor = System.Drawing.Color.LightGray;
+
+                            else if (bgcolor == "Red")
+                                this.BackColor = System.Drawing.Color.Red;
+
+                            else if (bgcolor == "Green")
+                                this.BackColor = System.Drawing.Color.YellowGreen;
+
+                            else if (bgcolor == "Blue")
+                                this.BackColor = System.Drawing.Color.DodgerBlue;
+
+                            else
+                                this.BackColor = System.Drawing.Color.Silver;
+                        }
                     }
-				}
+                    if (contaftercrash == "True")
+                    {
+                        //TODO: Implement function continuing after crash
+                    }
+                }
 			}
 		}
 		void B_startClick(object sender, EventArgs e)
@@ -116,7 +139,7 @@ namespace counter
         private void b_lock_Click(object sender, EventArgs e)
         {
             b_lock.Visible = false;
-            b_start.Enabled = false;
+            b_start.Enabled = false;        //When lock button is clicked disable b_start and show unlock button
             b_unlock.Visible = true;
         }
 

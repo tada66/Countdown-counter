@@ -26,7 +26,8 @@ namespace counter
 			InitializeComponent();
 			info.SetError(ch_bgimage, "Can improve performance on a slow computer");        //Show info messages next to check marks 
 			info.SetError(ch_contaftercrash, "If the app gets closed, after reopening it will continue from where it stopped");
-			using(StreamReader sr = new StreamReader("Counter/settings.xml"))
+            info.SetError(c_color, "Color will get changed only if background image is turned off");
+            using (StreamReader sr = new StreamReader("Counter/settings.xml"))
 			{
 				string smooth = sr.ReadLine();
 				string bgimage = sr.ReadLine();
@@ -48,6 +49,7 @@ namespace counter
 			{
 				sw.WriteLine(ch_bgimage.Checked);
                 sw.WriteLine(ch_contaftercrash.Checked);    //Write value to settings.xml
+                sw.WriteLine(c_color.Text);
 			}
 			Application.Restart();
 		}
