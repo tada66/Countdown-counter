@@ -20,6 +20,7 @@ namespace counter
 	public partial class MainForm : Form
 	{
 		int rychlost_progbar = 100;
+        bool soundon;
 		public MainForm()
 		{
 			InitializeComponent();
@@ -41,7 +42,12 @@ namespace counter
                     string bgimage = sr.ReadLine();
                     string contaftercrash = sr.ReadLine();
                     string bgcolor = sr.ReadLine();
-                    string soundon = sr.ReadLine();
+
+                    if (sr.ReadLine() == "True")
+                        soundon = true;
+                    else
+                        soundon = false;
+
                     if (bgimage == "True")
                     {
                         this.BackgroundImage = null;
@@ -70,6 +76,7 @@ namespace counter
                     {
                         //TODO: Implement function continuing after crash
                     }
+
                 }
 			}
 		}
@@ -87,9 +94,7 @@ namespace counter
 				progressBar1.Value = 0;
 				progressBar1.Maximum = time * rychlost_progbar;     
 				using(StreamWriter sw = new StreamWriter("Counter/CountDown.txt"))      
-				{
 					sw.Write(time);     //Write the current remaining time into a text file
-				}
 				timer1.Enabled = true;
 				timer2.Enabled = true;
 			}
@@ -121,16 +126,19 @@ namespace counter
 			if(progressBar1.Value == progressBar1.Maximum)
 			{
 				timer1.Enabled = false;     //The progress bar has reached the end, stop the timers
-                timer2.Enabled = false;     
-			}
+                timer2.Enabled = false;
+                if(soundon == true)
+                {
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"Counter/ding.wav");
+                    player.Play();
+                }
+            }
 		}
 		void Timer2Tick(object sender, EventArgs e)
 		{
 			progressBar1.Value += 1;                    //A second much faster timer used to make the progress bar smooth
 			if(progressBar1.Value == progressBar1.Maximum)
-			{
 				timer2.Enabled = false;
-			}
 		}
 		void B_settingsClick(object sender, EventArgs e)
 		{
@@ -143,6 +151,10 @@ namespace counter
             b_lock.Visible = false;
             b_start.Enabled = false;        //When lock button is clicked disable b_start and show unlock button
             b_unlock.Visible = true;
+            n_time.Enabled = false;
+            n_timemin.Enabled = false;
+            t_after.Enabled = false;
+            t_before.Enabled = false;
         }
 
         private void b_unlock_Click(object sender, EventArgs e)
@@ -150,6 +162,10 @@ namespace counter
             b_start.Enabled = true;
             b_lock.Visible = true;
             b_unlock.Visible = false;
+            n_time.Enabled = true;
+            n_timemin.Enabled = true;
+            t_after.Enabled = true;
+            t_before.Enabled = true;
         }
     }
 }
