@@ -43,91 +43,91 @@ namespace counter
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(generating));
-			this.l_generating = new System.Windows.Forms.Label();
-			this.progressBar1 = new System.Windows.Forms.ProgressBar();
-			this.timer1 = new System.Windows.Forms.Timer(this.components);
-			this.label1 = new System.Windows.Forms.Label();
-			this.b_yes = new System.Windows.Forms.Button();
-			this.Error = new System.Windows.Forms.ErrorProvider(this.components);
-			this.b_no = new System.Windows.Forms.Button();
-			((System.ComponentModel.ISupportInitialize)(this.Error)).BeginInit();
-			this.SuspendLayout();
-			// 
-			// l_generating
-			// 
-			this.l_generating.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.l_generating.Location = new System.Drawing.Point(12, 13);
-			this.l_generating.Name = "l_generating";
-			this.l_generating.Size = new System.Drawing.Size(562, 106);
-			this.l_generating.TabIndex = 0;
-			this.l_generating.Text = "label1";
-			// 
-			// progressBar1
-			// 
-			this.progressBar1.Location = new System.Drawing.Point(12, 91);
-			this.progressBar1.Maximum = 120;
-			this.progressBar1.Name = "progressBar1";
-			this.progressBar1.Size = new System.Drawing.Size(655, 23);
-			this.progressBar1.TabIndex = 1;
-			this.progressBar1.Value = 10;
-			this.progressBar1.Visible = false;
-			// 
-			// timer1
-			// 
-			this.timer1.Interval = 1000;
-			this.timer1.Tick += new System.EventHandler(this.Timer1Tick);
-			// 
-			// label1
-			// 
-			this.label1.Location = new System.Drawing.Point(12, 13);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(428, 23);
-			this.label1.TabIndex = 2;
-			this.label1.Text = "Files needed for Countdown timer have not yet been generated. Generate now?";
-			// 
-			// b_yes
-			// 
-			this.b_yes.Location = new System.Drawing.Point(480, 8);
-			this.b_yes.Name = "b_yes";
-			this.b_yes.Size = new System.Drawing.Size(75, 23);
-			this.b_yes.TabIndex = 4;
-			this.b_yes.Text = "Yes";
-			this.b_yes.UseVisualStyleBackColor = true;
-			this.b_yes.Click += new System.EventHandler(this.Button1Click);
-			// 
-			// Error
-			// 
-			this.Error.ContainerControl = this;
-			this.Error.Icon = ((System.Drawing.Icon)(resources.GetObject("Error.Icon")));
-			// 
-			// b_no
-			// 
-			this.b_no.Location = new System.Drawing.Point(399, 8);
-			this.b_no.Name = "b_no";
-			this.b_no.Size = new System.Drawing.Size(75, 23);
-			this.b_no.TabIndex = 5;
-			this.b_no.Text = "No";
-			this.b_no.UseVisualStyleBackColor = true;
-			this.b_no.Click += new System.EventHandler(this.B_noClick);
-			// 
-			// generating
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(679, 126);
-			this.Controls.Add(this.b_no);
-			this.Controls.Add(this.progressBar1);
-			this.Controls.Add(this.b_yes);
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.l_generating);
-			this.MaximizeBox = false;
-			this.Name = "generating";
-			this.Text = "Generating";
-			this.TopMost = true;
-			((System.ComponentModel.ISupportInitialize)(this.Error)).EndInit();
-			this.ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(generating));
+            this.l_generating = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.b_yes = new System.Windows.Forms.Button();
+            this.Error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.b_no = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.Error)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // l_generating
+            // 
+            this.l_generating.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.l_generating.Location = new System.Drawing.Point(12, 13);
+            this.l_generating.Name = "l_generating";
+            this.l_generating.Size = new System.Drawing.Size(562, 106);
+            this.l_generating.TabIndex = 0;
+            this.l_generating.Text = "label1";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(12, 91);
+            this.progressBar1.Maximum = 170;
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(655, 23);
+            this.progressBar1.TabIndex = 1;
+            this.progressBar1.Value = 10;
+            this.progressBar1.Visible = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.Timer1Tick);
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(12, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(428, 23);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Files needed for Countdown timer have not yet been generated. Generate now?";
+            // 
+            // b_yes
+            // 
+            this.b_yes.Location = new System.Drawing.Point(480, 8);
+            this.b_yes.Name = "b_yes";
+            this.b_yes.Size = new System.Drawing.Size(75, 23);
+            this.b_yes.TabIndex = 4;
+            this.b_yes.Text = "Yes";
+            this.b_yes.UseVisualStyleBackColor = true;
+            this.b_yes.Click += new System.EventHandler(this.Button1Click);
+            // 
+            // Error
+            // 
+            this.Error.ContainerControl = this;
+            this.Error.Icon = ((System.Drawing.Icon)(resources.GetObject("Error.Icon")));
+            // 
+            // b_no
+            // 
+            this.b_no.Location = new System.Drawing.Point(399, 8);
+            this.b_no.Name = "b_no";
+            this.b_no.Size = new System.Drawing.Size(75, 23);
+            this.b_no.TabIndex = 5;
+            this.b_no.Text = "No";
+            this.b_no.UseVisualStyleBackColor = true;
+            this.b_no.Click += new System.EventHandler(this.B_noClick);
+            // 
+            // generating
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(679, 126);
+            this.Controls.Add(this.b_no);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.b_yes);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.l_generating);
+            this.MaximizeBox = false;
+            this.Name = "generating";
+            this.Text = "Generating";
+            this.TopMost = true;
+            ((System.ComponentModel.ISupportInitialize)(this.Error)).EndInit();
+            this.ResumeLayout(false);
 
 		}
 	}

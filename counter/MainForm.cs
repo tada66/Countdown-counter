@@ -22,17 +22,18 @@ namespace counter
 		int rychlost_progbar = 100;
 		public MainForm()
 		{
-			//
-			// The InitializeComponent() call is required for Windows Forms designer support.
-			//
 			InitializeComponent();
             b_unlock.Visible = false;
 			if(File.Exists("Counter/CountDown.txt") != true)
 			{
 				Form generate = new generating();                               //If files required for app to work are present open generate
 				generate.Show();    
-				
 			}
+            if(File.Exists("Counter/ding.wav") != true)
+            {
+                Form generate = new generating();                               //If files required for app to work are present open generate
+                generate.Show();
+            }
 			if(File.Exists("Counter/settings.xml") == true)
 			{
                 using (StreamReader sr = new StreamReader("Counter/settings.xml"))
@@ -40,6 +41,7 @@ namespace counter
                     string bgimage = sr.ReadLine();
                     string contaftercrash = sr.ReadLine();
                     string bgcolor = sr.ReadLine();
+                    string soundon = sr.ReadLine();
                     if (bgimage == "True")
                     {
                         this.BackgroundImage = null;
@@ -73,7 +75,7 @@ namespace counter
 		}
 		void B_startClick(object sender, EventArgs e)
 		{
-			int time = Decimal.ToInt32(n_time.Value) + decimal.ToInt32(n_timemin.Value) * 60;  //Coonverts minutes into seconds and puts it all into "time"
+			int time = Decimal.ToInt32(n_time.Value) + decimal.ToInt32(n_timemin.Value) * 60;  //Converts minutes into seconds and puts it all into "time"
 			if(time == 0)
 			{
 				MessageBox.Show("The time cannon be 0", "Error", 

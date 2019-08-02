@@ -57,6 +57,7 @@ namespace counter
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.c_color = new System.Windows.Forms.ComboBox();
+            this.ch_playsound = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.info)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorNigga)).BeginInit();
             this.SuspendLayout();
@@ -141,7 +142,7 @@ namespace counter
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(185, 23);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Beep when end";
+            this.label4.Text = "Play sound at the end:";
             // 
             // c_color
             // 
@@ -158,11 +159,20 @@ namespace counter
             this.c_color.Size = new System.Drawing.Size(121, 21);
             this.c_color.TabIndex = 6;
             // 
+            // ch_playsound
+            // 
+            this.ch_playsound.Location = new System.Drawing.Point(149, 76);
+            this.ch_playsound.Name = "ch_playsound";
+            this.ch_playsound.Size = new System.Drawing.Size(17, 24);
+            this.ch_playsound.TabIndex = 7;
+            this.ch_playsound.UseVisualStyleBackColor = true;
+            // 
             // settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.ch_playsound);
             this.Controls.Add(this.c_color);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
@@ -188,5 +198,6 @@ namespace counter
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox c_color;
+        private System.Windows.Forms.CheckBox ch_playsound;
     }
 }

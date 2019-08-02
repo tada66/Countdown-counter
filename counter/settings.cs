@@ -20,11 +20,22 @@ namespace counter
 	{
 		public settings()
 		{
-			//
-			// The InitializeComponent() call is required for Windows Forms designer support.
-			//
-			InitializeComponent();
-			info.SetError(ch_bgimage, "Can improve performance on a slow computer");        //Show info messages next to check marks 
+            InitializeComponent();
+            using (StreamReader sr = new StreamReader("Counter/settings.xml"))
+            {
+                if (sr.ReadLine() == "True")
+                    ch_bgimage.Checked = true;
+
+                if (sr.ReadLine() == "True")
+                    ch_contaftercrash.Checked = true;
+
+                string color = sr.ReadLine();
+                c_color.Text = color;
+
+                if (sr.ReadLine() == "True")
+                    ch_playsound.Checked = true;
+            }
+            info.SetError(ch_bgimage, "Can improve performance on a slow computer");        //Show info messages next to check marks 
 			info.SetError(ch_contaftercrash, "If the app gets closed, after reopening it will continue from where it stopped");
             info.SetError(c_color, "Color will get changed only if background image is turned off");
             using (StreamReader sr = new StreamReader("Counter/settings.xml"))
@@ -35,9 +46,6 @@ namespace counter
 					ch_bgimage.Checked = true;      // Set checkmark for background image to be the same as previous sesion 
 				
 			}
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
 		}
 		void B_cancelClick(object sender, EventArgs e)
 		{
@@ -50,6 +58,7 @@ namespace counter
 				sw.WriteLine(ch_bgimage.Checked);
                 sw.WriteLine(ch_contaftercrash.Checked);    //Write value to settings.xml
                 sw.WriteLine(c_color.Text);
+                sw.WriteLine(ch_playsound.Checked);
 			}
 			Application.Restart();
 		}

@@ -10,6 +10,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
+using System.Net;
 
 namespace counter
 {
@@ -20,36 +21,39 @@ namespace counter
 	{
 		public generating()
 		{
-			//
-			// The InitializeComponent() call is required for Windows Forms designer support.
-			//
 			InitializeComponent();
 			l_generating.Visible = false;
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
 		}
-		void Timer1Tick(object sender, EventArgs e)
-		{
-			if(progressBar1.Value == 10)
-			{
-				string folderName = @"";
-				string pathString = System.IO.Path.Combine(folderName, "Counter");
-				System.IO.Directory.CreateDirectory(pathString);                    //Generate the folder "Counter"
-				l_generating.Text = "Generating countdown text file...";
-			}
-			if(progressBar1.Value == 60)
-			{   
-				using(StreamWriter sw = new StreamWriter("Counter/countdown.txt"));     //Generate countdown.txt 
-				l_generating.Text = "Generating settings...";           
-			}
-			if(progressBar1.Value == 110)
-			{
-				using(StreamWriter sw = new StreamWriter("Counter/settings.xml"));
-				l_generating.Text = "Files generated succesfully. You can close this window now.";  //Generate settings.xml and shut timer off
-				progressBar1.Value = progressBar1.Value + 10;
-				timer1.Enabled = false;
-			}
+        void Timer1Tick(object sender, EventArgs e)
+        {
+            if (progressBar1.Value == 10)
+            {
+                string folderName = @"";
+                string pathString = System.IO.Path.Combine(folderName, "Counter");
+                System.IO.Directory.CreateDirectory(pathString);                    //Generate the folder "Counter"
+                l_generating.Text = "Generating countdown text file...";
+            }
+            if (progressBar1.Value == 60)
+            {
+                using (StreamWriter sw = new StreamWriter("Counter/countdown.txt")) ;     //Generate countdown.txt 
+                l_generating.Text = "Generating settings...";
+            }
+            if (progressBar1.Value == 110)
+            {
+                using (StreamWriter sw = new StreamWriter("Counter/settings.xml")) ;
+                l_generating.Text = "Downloading sound files";  //Generate settings.xml
+            }
+            if (progressBar1.Value == 160)
+            {
+                using (var client = new WebClient())
+                {
+                    client.DownloadFile("http://tada66.wz.cz/ding.wav", "Counter/ding.wav");
+                }
+                l_generating.Text = "Files generated succesfully. You can close this window now.";  //Generate settings.xml and shut timer off
+                progressBar1.Value = progressBar1.Value + 10;
+                timer1.Enabled = false;
+
+            }
 			if(progressBar1.Value != progressBar1.Maximum)
 				progressBar1.Value = progressBar1.Value + 50;       //After generating something increase pbar by 50 in order for other stuff to be generated
 		}
