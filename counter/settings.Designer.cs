@@ -58,6 +58,7 @@ namespace counter
             this.label4 = new System.Windows.Forms.Label();
             this.c_color = new System.Windows.Forms.ComboBox();
             this.ch_playsound = new System.Windows.Forms.CheckBox();
+            this.c_ding = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.info)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorNigga)).BeginInit();
             this.SuspendLayout();
@@ -166,12 +167,27 @@ namespace counter
             this.ch_playsound.Size = new System.Drawing.Size(17, 24);
             this.ch_playsound.TabIndex = 7;
             this.ch_playsound.UseVisualStyleBackColor = true;
+            this.ch_playsound.CheckedChanged += new System.EventHandler(this.ch_playsound_CheckedChanged);
+            // 
+            // c_ding
+            // 
+            this.c_ding.FormattingEnabled = true;
+            this.c_ding.Items.AddRange(new object[] {
+            "Ding1",
+            "Ding2",
+            "Ding3",
+            "Ding4"});
+            this.c_ding.Location = new System.Drawing.Point(172, 78);
+            this.c_ding.Name = "c_ding";
+            this.c_ding.Size = new System.Drawing.Size(78, 21);
+            this.c_ding.TabIndex = 8;
             // 
             // settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.c_ding);
             this.Controls.Add(this.ch_playsound);
             this.Controls.Add(this.c_color);
             this.Controls.Add(this.label4);
@@ -199,5 +215,6 @@ namespace counter
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox c_color;
         private System.Windows.Forms.CheckBox ch_playsound;
+        private System.Windows.Forms.ComboBox c_ding;
     }
 }

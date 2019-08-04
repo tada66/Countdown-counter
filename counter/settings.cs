@@ -21,6 +21,7 @@ namespace counter
 		public settings()
 		{
             InitializeComponent();
+            c_ding.Visible = false;
             using (StreamReader sr = new StreamReader("Counter/settings.xml"))
             {
                 if (sr.ReadLine() == "True")
@@ -33,7 +34,10 @@ namespace counter
                 c_color.Text = color;
 
                 if (sr.ReadLine() == "True")
+                {
                     ch_playsound.Checked = true;
+                    c_ding.Visible = true;
+                }
             }
             info.SetError(ch_bgimage, "Can improve performance on a slow computer");        //Show info messages next to check marks 
 			info.SetError(ch_contaftercrash, "If the app gets closed, after reopening it will continue from where it stopped");
@@ -62,6 +66,13 @@ namespace counter
 			}
 			Application.Restart();
 		}
-		
-	}
+
+        private void ch_playsound_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ch_playsound.Checked)
+                c_ding.Visible = true;
+            else
+                c_ding.Visible = false;
+        }
+    }
 }

@@ -48,6 +48,9 @@ namespace counter
                 using (var client = new WebClient())
                 {
                     client.DownloadFile("http://tada66.wz.cz/ding.wav", "Counter/ding.wav");
+                    client.DownloadFile("http://tada66.wz.cz/ding2.wav", "Counter/ding2.wav");
+                    client.DownloadFile("http://tada66.wz.cz/ding3.wav", "Counter/ding3.wav");
+                    client.DownloadFile("http://tada66.wz.cz/ding4.wav", "Counter/ding4.wav");
                 }
                 l_generating.Text = "Files generated succesfully. You can close this window now.";  //Generate settings.xml and shut timer off
                 progressBar1.Value = progressBar1.Value + 10;

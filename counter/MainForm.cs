@@ -30,10 +30,13 @@ namespace counter
 				Form generate = new generating();                               //If files required for app to work are present open generate
 				generate.Show();    
 			}
-            if(File.Exists("Counter/ding.wav") != true)
+            else
             {
-                Form generate = new generating();                               //If files required for app to work are present open generate
-                generate.Show();
+                if (File.Exists("Counter/ding.wav") != true)
+                {
+                    Form generate = new generating();                               //If files required for app to work are present open generate
+                    generate.Show();
+                }
             }
 			if(File.Exists("Counter/settings.xml") == true)
 			{
@@ -129,7 +132,8 @@ namespace counter
                 timer2.Enabled = false;
                 if(soundon == true)
                 {
-                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"Counter/ding.wav");
+                    string source = "Counter/ding2.wav";
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(@source);
                     player.Play();
                 }
             }

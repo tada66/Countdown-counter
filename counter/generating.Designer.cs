@@ -76,7 +76,7 @@ namespace counter
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 800;
             this.timer1.Tick += new System.EventHandler(this.Timer1Tick);
             // 
             // label1
