@@ -181,6 +181,7 @@ namespace counter
             this.c_ding.Name = "c_ding";
             this.c_ding.Size = new System.Drawing.Size(78, 21);
             this.c_ding.TabIndex = 8;
+            this.c_ding.SelectedIndexChanged += new System.EventHandler(this.c_ding_SelectedIndexChanged);
             // 
             // settings
             // 

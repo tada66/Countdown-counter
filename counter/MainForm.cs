@@ -19,8 +19,9 @@ namespace counter
 	/// </summary>
 	public partial class MainForm : Form
 	{
-		int rychlost_progbar = 100;
+		const int rychlost_progbar = 100;
         bool soundon;
+        string dingwhich;
 		public MainForm()
 		{
 			InitializeComponent();
@@ -32,9 +33,9 @@ namespace counter
 			}
             else
             {
-                if (File.Exists("Counter/ding.wav") != true)
+                if (File.Exists("Counter/ding2.wav") != true)
                 {
-                    Form generate = new generating();                               //If files required for app to work are present open generate
+                    Form generate = new generating();                               //Check once more time lol
                     generate.Show();
                 }
             }
@@ -45,12 +46,11 @@ namespace counter
                     string bgimage = sr.ReadLine();
                     string contaftercrash = sr.ReadLine();
                     string bgcolor = sr.ReadLine();
-
                     if (sr.ReadLine() == "True")
                         soundon = true;
                     else
                         soundon = false;
-
+                    dingwhich = sr.ReadLine(); // Asign dingwhich location of the ding
                     if (bgimage == "True")
                     {
                         this.BackgroundImage = null;
@@ -79,7 +79,6 @@ namespace counter
                     {
                         //TODO: Implement function continuing after crash
                     }
-
                 }
 			}
 		}
@@ -132,8 +131,7 @@ namespace counter
                 timer2.Enabled = false;
                 if(soundon == true)
                 {
-                    string source = "Counter/ding2.wav";
-                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(@source);
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(@dingwhich);
                     player.Play();
                 }
             }

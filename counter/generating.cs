@@ -41,18 +41,18 @@ namespace counter
             if (progressBar1.Value == 110)
             {
                 using (StreamWriter sw = new StreamWriter("Counter/settings.xml")) ;
-                l_generating.Text = "Downloading sound files";  //Generate settings.xml
+                l_generating.Text = "Downloading sound effects";  //Generate settings.xml
             }
             if (progressBar1.Value == 160)
             {
                 using (var client = new WebClient())
                 {
-                    client.DownloadFile("http://tada66.wz.cz/ding.wav", "Counter/ding.wav");
-                    client.DownloadFile("http://tada66.wz.cz/ding2.wav", "Counter/ding2.wav");
+                    client.DownloadFile("http://tada66.wz.cz/ding.wav", "Counter/ding1.wav");
+                    client.DownloadFile("http://tada66.wz.cz/ding2.wav", "Counter/ding2.wav");      //Download sound effects
                     client.DownloadFile("http://tada66.wz.cz/ding3.wav", "Counter/ding3.wav");
                     client.DownloadFile("http://tada66.wz.cz/ding4.wav", "Counter/ding4.wav");
                 }
-                l_generating.Text = "Files generated succesfully. You can close this window now.";  //Generate settings.xml and shut timer off
+                l_generating.Text = "Files generated succesfully. You can close this window now.";  //shut timer off
                 progressBar1.Value = progressBar1.Value + 10;
                 timer1.Enabled = false;
 

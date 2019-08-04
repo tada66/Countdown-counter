@@ -63,6 +63,7 @@ namespace counter
                 sw.WriteLine(ch_contaftercrash.Checked);    //Write value to settings.xml
                 sw.WriteLine(c_color.Text);
                 sw.WriteLine(ch_playsound.Checked);
+                sw.WriteLine("Counter/" + c_ding.Text + ".wav");
 			}
 			Application.Restart();
 		}
@@ -73,6 +74,12 @@ namespace counter
                 c_ding.Visible = true;
             else
                 c_ding.Visible = false;
+        }
+
+        private void c_ding_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"Counter/" + c_ding.Text + ".wav");
+            player.Play();
         }
     }
 }
