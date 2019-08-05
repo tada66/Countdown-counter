@@ -19,7 +19,7 @@ namespace counter
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Button b_cancel;
 		private System.Windows.Forms.Button b_save;
-		private System.Windows.Forms.ErrorProvider ErrorNigga;
+		private System.Windows.Forms.ErrorProvider Error;
 		private System.Windows.Forms.CheckBox ch_contaftercrash;
 		private System.Windows.Forms.Label label3;
 		
@@ -51,7 +51,7 @@ namespace counter
             this.ch_bgimage = new System.Windows.Forms.CheckBox();
             this.b_save = new System.Windows.Forms.Button();
             this.b_cancel = new System.Windows.Forms.Button();
-            this.ErrorNigga = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Error = new System.Windows.Forms.ErrorProvider(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.ch_contaftercrash = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@ namespace counter
             this.ch_playsound = new System.Windows.Forms.CheckBox();
             this.c_ding = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.info)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ErrorNigga)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Error)).BeginInit();
             this.SuspendLayout();
             // 
             // info
@@ -105,10 +105,10 @@ namespace counter
             this.b_cancel.UseVisualStyleBackColor = true;
             this.b_cancel.Click += new System.EventHandler(this.B_cancelClick);
             // 
-            // ErrorNigga
+            // Error
             // 
-            this.ErrorNigga.ContainerControl = this;
-            this.ErrorNigga.Icon = ((System.Drawing.Icon)(resources.GetObject("ErrorNigga.Icon")));
+            this.Error.ContainerControl = this;
+            this.Error.Icon = ((System.Drawing.Icon)(resources.GetObject("Error.Icon")));
             // 
             // label3
             // 
@@ -207,7 +207,7 @@ namespace counter
             this.Text = "settings";
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.info)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ErrorNigga)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Error)).EndInit();
             this.ResumeLayout(false);
 
 		}

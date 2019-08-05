@@ -16,7 +16,7 @@ namespace counter
 {
 	/// <summary>
 	/// The main app
-	/// </summary>
+	/// </summary
 	public partial class MainForm : Form
 	{
 		const int rychlost_progbar = 100;
@@ -77,7 +77,17 @@ namespace counter
                     }
                     if (contaftercrash == "True")
                     {
-                        //TODO: Implement function continuing after crash
+                        using (StreamReader sr2 = new StreamReader("counter/countdown.txt"))
+                        {
+                            string[] timetoconv = sr2.ReadLine().Split(':');
+                            int timebeforecrashhour = int.Parse(timetoconv[0]) * 3600;
+                            int timebeforecrashminute = int.Parse(timetoconv[1]) * 60;
+                            int timebeforecrashsecond = int.Parse(timetoconv[2]);
+                            int timebeforecrash = timebeforecrashhour + timebeforecrashminute + timebeforecrashsecond;
+                            progressBar1.Maximum = timebeforecrash * rychlost_progbar;
+                            timer1.Enabled = true;
+                            timer2.Enabled = true;
+                        }
                     }
                 }
 			}

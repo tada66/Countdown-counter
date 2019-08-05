@@ -57,15 +57,20 @@ namespace counter
 		}
 		void B_saveClick(object sender, EventArgs e)
 		{
-			using(StreamWriter sw = new StreamWriter("Counter/settings.xml"))
-			{
-				sw.WriteLine(ch_bgimage.Checked);
-                sw.WriteLine(ch_contaftercrash.Checked);    //Write value to settings.xml
-                sw.WriteLine(c_color.Text);
-                sw.WriteLine(ch_playsound.Checked);
-                sw.WriteLine("Counter/" + c_ding.Text + ".wav");
-			}
-			Application.Restart();
+            if (ch_playsound.Checked == true && c_ding.Text == "")
+                Error.SetError(c_ding, "You need to pick a sound effect");
+            else
+            {
+                using (StreamWriter sw = new StreamWriter("Counter/settings.xml"))
+                {
+                    sw.WriteLine(ch_bgimage.Checked);
+                    sw.WriteLine(ch_contaftercrash.Checked);    //Write value to settings.xml
+                    sw.WriteLine(c_color.Text);
+                    sw.WriteLine(ch_playsound.Checked);
+                    sw.WriteLine("Counter/" + c_ding.Text + ".wav");
+                }
+                Application.Restart();
+            }
 		}
 
         private void ch_playsound_CheckedChanged(object sender, EventArgs e)

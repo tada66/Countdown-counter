@@ -35,12 +35,12 @@ namespace counter
             }
             if (progressBar1.Value == 60)
             {
-                using (StreamWriter sw = new StreamWriter("Counter/countdown.txt")) ;     //Generate countdown.txt 
+                using (StreamWriter sw = new StreamWriter("Counter/countdown.txt"));     //Generate countdown.txt 
                 l_generating.Text = "Generating settings...";
             }
             if (progressBar1.Value == 110)
             {
-                using (StreamWriter sw = new StreamWriter("Counter/settings.xml")) ;
+                using (StreamWriter sw = new StreamWriter("Counter/settings.xml"));
                 l_generating.Text = "Downloading sound effects";  //Generate settings.xml
             }
             if (progressBar1.Value == 160)
