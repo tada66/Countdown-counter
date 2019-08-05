@@ -149,7 +149,12 @@ namespace counter
 			{
 				timer1.Enabled = false;     //The progress bar has reached the end, stop the timers
                 timer2.Enabled = false;
-                if(soundon == true)
+                using (StreamWriter sw = new StreamWriter("Counter/countdown.txt"))
+                {
+                    sw.WriteLine(t_endtext.Text);
+                    l_output.Text = t_endtext.Text;
+                }
+                if (soundon == true)
                 {
                     System.Media.SoundPlayer player = new System.Media.SoundPlayer(@dingwhich);
                     player.Play();

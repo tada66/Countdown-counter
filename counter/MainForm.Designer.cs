@@ -82,6 +82,8 @@ namespace counter
             this.label8 = new System.Windows.Forms.Label();
             this.b_lock = new System.Windows.Forms.Button();
             this.b_unlock = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.t_endtext = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.n_time)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Error)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_timemin)).BeginInit();
@@ -191,7 +193,7 @@ namespace counter
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Nexa Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(12, 70);
+            this.label5.Location = new System.Drawing.Point(12, 71);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(282, 23);
             this.label5.TabIndex = 4;
@@ -226,7 +228,7 @@ namespace counter
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Nexa Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(12, 94);
+            this.label6.Location = new System.Drawing.Point(12, 122);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(282, 23);
             this.label6.TabIndex = 4;
@@ -237,7 +239,7 @@ namespace counter
             this.l_output.BackColor = System.Drawing.Color.Transparent;
             this.l_output.Font = new System.Drawing.Font("Nexa Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l_output.ForeColor = System.Drawing.Color.Black;
-            this.l_output.Location = new System.Drawing.Point(112, 94);
+            this.l_output.Location = new System.Drawing.Point(112, 122);
             this.l_output.Name = "l_output";
             this.l_output.Size = new System.Drawing.Size(282, 23);
             this.l_output.TabIndex = 4;
@@ -307,6 +309,24 @@ namespace counter
             this.b_unlock.UseVisualStyleBackColor = true;
             this.b_unlock.Click += new System.EventHandler(this.b_unlock_Click);
             // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Nexa Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(12, 97);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(282, 23);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Endtext:";
+            // 
+            // t_endtext
+            // 
+            this.t_endtext.Location = new System.Drawing.Point(195, 97);
+            this.t_endtext.Name = "t_endtext";
+            this.t_endtext.Size = new System.Drawing.Size(407, 20);
+            this.t_endtext.TabIndex = 6;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,6 +337,7 @@ namespace counter
             this.Controls.Add(this.b_lock);
             this.Controls.Add(this.n_timemin);
             this.Controls.Add(this.b_settings);
+            this.Controls.Add(this.t_endtext);
             this.Controls.Add(this.t_after);
             this.Controls.Add(this.t_before);
             this.Controls.Add(this.b_start);
@@ -327,6 +348,7 @@ namespace counter
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -337,7 +359,7 @@ namespace counter
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.Text = "CountDown timer 1.8";
+            this.Text = "CountDown timer";
             ((System.ComponentModel.ISupportInitialize)(this.n_time)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Error)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_timemin)).EndInit();
@@ -348,5 +370,7 @@ namespace counter
 
         private System.Windows.Forms.Button b_unlock;
         private System.Windows.Forms.Button b_lock;
+        private System.Windows.Forms.TextBox t_endtext;
+        private System.Windows.Forms.Label label9;
     }
 }
