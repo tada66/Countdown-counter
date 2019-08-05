@@ -102,14 +102,24 @@ namespace counter
 				Error.SetError(n_time, "This cannot be zero");
 			}
 			else
-			{
-				progressBar1.Value = 0;
-				progressBar1.Maximum = time * rychlost_progbar;     
-				using(StreamWriter sw = new StreamWriter("Counter/CountDown.txt"))      
-					sw.Write(time);     //Write the current remaining time into a text file
-				timer1.Enabled = true;
-				timer2.Enabled = true;
-			}
+            {
+                if (b_start.Text == "Start the Countdown")
+                {
+                    progressBar1.Value = 0;
+                    progressBar1.Maximum = time * rychlost_progbar;
+                    using (StreamWriter sw = new StreamWriter("Counter/CountDown.txt"))
+                        sw.Write(time);     //Write the current remaining time into a text file
+                    timer1.Enabled = true;
+                    timer2.Enabled = true;
+                    b_start.Text = "Stop the countdown";
+                }
+                else
+                {
+                    timer1.Enabled = false;
+                    timer2.Enabled = false;
+                    progressBar1.Value = 0;                  b_start.Text = "Start the Countdown";
+                }
+            }
 		}
 		void Timer1Tick(object sender, EventArgs e)
 		{
