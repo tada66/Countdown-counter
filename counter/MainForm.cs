@@ -182,6 +182,7 @@ namespace counter
             n_timemin.Enabled = false;
             t_after.Enabled = false;
             t_before.Enabled = false;
+            t_endtext.Enabled = false;
         }
 
         private void b_unlock_Click(object sender, EventArgs e)
@@ -193,6 +194,7 @@ namespace counter
             n_timemin.Enabled = true;
             t_after.Enabled = true;
             t_before.Enabled = true;
+            t_endtext.Enabled = true;
         }
     }
 }
