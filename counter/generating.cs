@@ -19,7 +19,23 @@ namespace counter
 	/// </summary>
 	public partial class generating : Form
 	{
-		public generating()
+        public static bool CheckForInternetConnection()
+        {
+            try
+            {
+                using (var client = new WebClient())
+                using (client.OpenRead("http://clients3.google.com/generate_204"))
+                {
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public generating()
 		{
 			InitializeComponent();
 			l_generating.Visible = false;
@@ -47,14 +63,25 @@ namespace counter
             {
                 using (var client = new WebClient())
                 {
-                    client.DownloadFile("http://tada66.wz.cz/ding.wav", "Counter/ding1.wav");
-                    client.DownloadFile("http://tada66.wz.cz/ding2.wav", "Counter/ding2.wav");      //Download sound effects
-                    client.DownloadFile("http://tada66.wz.cz/ding3.wav", "Counter/ding3.wav");
-                    client.DownloadFile("http://tada66.wz.cz/ding4.wav", "Counter/ding4.wav");
+                    if (CheckForInternetConnection())
+                    {
+                        client.DownloadFile("http://tada66.wz.cz/ding.wav", "Counter/ding1.wav");
+                        client.DownloadFile("http://tada66.wz.cz/ding2.wav", "Counter/ding2.wav");      //Download sound effects
+                        client.DownloadFile("http://tada66.wz.cz/ding3.wav", "Counter/ding3.wav");
+                        client.DownloadFile("http://tada66.wz.cz/ding4.wav", "Counter/ding4.wav");
+                        l_generating.Text = "Files generated succesfully. You can close this window now.";  //shut timer off
+                        progressBar1.Value = progressBar1.Value + 10;
+                        timer1.Enabled = false;
+                    }
+                    else
+                    {
+                        l_generating.Text = "No internet";  //shut timer off
+                        progressBar1.Value = progressBar1.Value + 10;
+                        timer1.Enabled = false;
+                        MessageBox.Show("Internet is not avaliable", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                l_generating.Text = "Files generated succesfully. You can close this window now.";  //shut timer off
-                progressBar1.Value = progressBar1.Value + 10;
-                timer1.Enabled = false;
 
             }
 			if(progressBar1.Value != progressBar1.Maximum)

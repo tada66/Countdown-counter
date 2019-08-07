@@ -52,6 +52,7 @@ namespace counter
             this.b_yes = new System.Windows.Forms.Button();
             this.Error = new System.Windows.Forms.ErrorProvider(this.components);
             this.b_no = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Error)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,11 +113,21 @@ namespace counter
             this.b_no.UseVisualStyleBackColor = true;
             this.b_no.Click += new System.EventHandler(this.B_noClick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(404, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "label2";
+            // 
             // generating
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 126);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.b_no);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.b_yes);
@@ -128,7 +139,10 @@ namespace counter
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.Error)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
-	}
+
+        private System.Windows.Forms.Label label2;
+    }
 }

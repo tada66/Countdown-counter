@@ -117,7 +117,8 @@ namespace counter
                 {
                     timer1.Enabled = false;
                     timer2.Enabled = false;
-                    progressBar1.Value = 0;                  b_start.Text = "Start the Countdown";
+                    progressBar1.Value = 0;
+                    b_start.Text = "Start the Countdown";
                 }
             }
 		}
