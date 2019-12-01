@@ -18,7 +18,6 @@ namespace counter
 		private System.Windows.Forms.ProgressBar progressBar1;
 		private System.Windows.Forms.Timer timer1;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Button b_yes;
 		private System.Windows.Forms.ErrorProvider Error;
 		private System.Windows.Forms.Button b_no;
 		
@@ -49,10 +48,9 @@ namespace counter
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.b_yes = new System.Windows.Forms.Button();
             this.Error = new System.Windows.Forms.ErrorProvider(this.components);
             this.b_no = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.b_yes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Error)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,16 +86,6 @@ namespace counter
             this.label1.TabIndex = 2;
             this.label1.Text = "Files needed for Countdown timer have not yet been generated. Generate now?";
             // 
-            // b_yes
-            // 
-            this.b_yes.Location = new System.Drawing.Point(480, 8);
-            this.b_yes.Name = "b_yes";
-            this.b_yes.Size = new System.Drawing.Size(75, 23);
-            this.b_yes.TabIndex = 4;
-            this.b_yes.Text = "Yes";
-            this.b_yes.UseVisualStyleBackColor = true;
-            this.b_yes.Click += new System.EventHandler(this.Button1Click);
-            // 
             // Error
             // 
             this.Error.ContainerControl = this;
@@ -113,21 +101,21 @@ namespace counter
             this.b_no.UseVisualStyleBackColor = true;
             this.b_no.Click += new System.EventHandler(this.B_noClick);
             // 
-            // label2
+            // b_yes
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(404, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "label2";
+            this.b_yes.Location = new System.Drawing.Point(480, 8);
+            this.b_yes.Name = "b_yes";
+            this.b_yes.Size = new System.Drawing.Size(75, 23);
+            this.b_yes.TabIndex = 4;
+            this.b_yes.Text = "Yes";
+            this.b_yes.UseVisualStyleBackColor = true;
+            this.b_yes.Click += new System.EventHandler(this.Button1Click);
             // 
             // generating
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 126);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.b_no);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.b_yes);
@@ -140,10 +128,9 @@ namespace counter
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.Error)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
 		}
 
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button b_yes;
     }
 }

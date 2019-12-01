@@ -39,7 +39,8 @@ namespace counter
 		{
 			InitializeComponent();
 			l_generating.Visible = false;
-		}
+
+        }
         void Timer1Tick(object sender, EventArgs e)
         {
             if (progressBar1.Value == 10)
@@ -47,12 +48,12 @@ namespace counter
                 string folderName = @"";
                 string pathString = System.IO.Path.Combine(folderName, "Counter");
                 System.IO.Directory.CreateDirectory(pathString);                    //Generate the folder "Counter"
-                l_generating.Text = "Generating countdown text file...";
+                l_generating.Text = "Generating a countdown text file...";
             }
             if (progressBar1.Value == 60)
             {
                 using (StreamWriter sw = new StreamWriter("Counter/countdown.txt"));     //Generate countdown.txt 
-                l_generating.Text = "Generating settings...";
+                l_generating.Text = "Generating the settings...";
             }
             if (progressBar1.Value == 110)
             {
@@ -69,7 +70,7 @@ namespace counter
                         client.DownloadFile("http://tada66.wz.cz/ding2.wav", "Counter/ding2.wav");      //Download sound effects
                         client.DownloadFile("http://tada66.wz.cz/ding3.wav", "Counter/ding3.wav");
                         client.DownloadFile("http://tada66.wz.cz/ding4.wav", "Counter/ding4.wav");
-                        l_generating.Text = "Files generated succesfully. You can close this window now.";  //shut timer off
+                        l_generating.Text = "Files have beenated succesfully. You can close this window now.";  //shut timer off
                         progressBar1.Value = progressBar1.Value + 10;
                         timer1.Enabled = false;
                     }
