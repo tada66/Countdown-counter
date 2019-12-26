@@ -24,7 +24,7 @@ namespace counter
             try
             {
                 using (var client = new WebClient())
-                using (client.OpenRead("http://clients3.google.com/generate_204"))
+                using (client.OpenRead("http://clients3.google.com/generate_204"))      //check if internet connection is avaliable
                 {
                     return true;
                 }
@@ -73,10 +73,13 @@ namespace counter
                         l_generating.Text = "Files have beenated succesfully. You can close this window now.";  //shut timer off
                         progressBar1.Value = progressBar1.Value + 10;
                         timer1.Enabled = false;
+
+                        untilclose.Enabled = true;
+
                     }
                     else
                     {
-                        l_generating.Text = "No internet";  //shut timer off
+                        l_generating.Text = "Internet connection wasn't found. Please try again later.";  //shut timer off
                         progressBar1.Value = progressBar1.Value + 10;
                         timer1.Enabled = false;
                         MessageBox.Show("Internet is not avaliable", "Error",
@@ -100,7 +103,12 @@ namespace counter
 		}
 		void B_noClick(object sender, EventArgs e)
 		{
-			Application.Exit();
+			Application.Exit();  //Application cannot work without these files, close 
 		}
-	}
+
+        private void untilclose_Tick(object sender, EventArgs e)
+        {
+            this.Close(); //Make window auto close after 30sec
+        }
+    }
 }
