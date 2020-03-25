@@ -26,20 +26,20 @@ namespace counter
 		{
 			InitializeComponent();
             b_unlock.Visible = false;
-			if(File.Exists("Counter/CountDown.txt") != true)
+			if(!File.Exists("Counter/CountDown.txt"))
 			{
 				Form generate = new generating();                               //If files required for app to work are present open generate
 				generate.Show();    
 			}
             else
             {
-                if (File.Exists("Counter/ding2.wav") != true)
+                if (!File.Exists("Counter/ding2.wav"))
                 {
                     Form generate = new generating();                               //Check once more time lol
                     generate.Show();
                 }
             }
-			if(File.Exists("Counter/settings.xml") == true)
+			if(File.Exists("Counter/settings.xml"))
 			{
                 using (StreamReader sr = new StreamReader("Counter/settings.xml"))
                 {                                                                           //If they do exist continue and apply settings.xml
