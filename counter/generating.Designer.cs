@@ -51,6 +51,7 @@ namespace counter
             this.Error = new System.Windows.Forms.ErrorProvider(this.components);
             this.b_no = new System.Windows.Forms.Button();
             this.b_yes = new System.Windows.Forms.Button();
+            this.untilclose = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Error)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,6 +112,11 @@ namespace counter
             this.b_yes.UseVisualStyleBackColor = true;
             this.b_yes.Click += new System.EventHandler(this.Button1Click);
             // 
+            // untilclose
+            // 
+            this.untilclose.Interval = 30000;
+            this.untilclose.Tick += new System.EventHandler(this.untilclose_Tick);
+            // 
             // generating
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,5 +138,6 @@ namespace counter
 		}
 
         private System.Windows.Forms.Button b_yes;
+        private System.Windows.Forms.Timer untilclose;
     }
 }
